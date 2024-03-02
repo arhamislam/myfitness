@@ -21,7 +21,7 @@
         <header>
             <div class="headerImage">
                 <!-- Navigation Bar -->
-                <nav class="navbar navbar-expand-lg fixed-top py-0 navBackground">
+                <nav class="navbar navbar-expand-lg fixed-top py-0 purpleBackground">
                     <div class="container-fluid">
                         <a class="navbar-brand active" aria-current="page" href="#"><span class="text navHomeMy">my</span><span class="text navHomeFitness">fitness</span></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,8 +29,8 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav ms-auto">
-                                <a class="nav-link text navLinks" href="login.php">Sign In</a>
-                                <a class="nav-link text navLinks" href="register.php">Sign Up</a>
+                                <a class="nav-link text whiteText" href="login.php">Sign In</a>
+                                <a class="nav-link text whiteText" href="register.php">Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -49,9 +49,9 @@
         </header>
         <main>
             <!-- About Us -->
-            <section id="aboutUs">
+            <section id="about">
                 <div class="container-md">
-                    <div class="row align-items-center aboutVP testing1">
+                    <div class="row align-items-center sectionVP">
                         <div class="col-md text-center">
                             <p class="display-3 mb-4 text">About Us</p>
                             <p class="fs-4">
@@ -67,106 +67,99 @@
             </section>
 
             <!-- Features -->
-            <!-- <section id="g">
-                <div class="container-md px-5 text-center">
-                    <div class="row testing2">
-                        <p class="display-3 mb-4 text">Features</p>
-                    </div>
-                    <div class="row justify-content-between text-center">
-                        <div class="col-md mx-5">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="" width="300" height="300" class="rounded-5 shadow">
-                        </div>
-                        <div class="col-md mx-5 p-4 rounded-5 shadow">2</div>
-                        <div class="col-md mx-5 p-4 rounded-5 shadow">3</div>
-                    </div>
-                </div>
-            </section> -->
-
-            <!-- <section id="gg">
-                <div class="container-md px-5 text-center">
-                    <div class="row justify-content-between featuresHeadingVP testing2">
-                        <p class="display-3 mb-5 text">Features</p>
-                        <div class="col-md">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="Logging workouts" class="rounded-5 shadow featureSize">
-                        </div>
-                        <div class="col-md">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="Creating workout plans" class="rounded-5 shadow featureSize">
-                        </div>
-                        <div class="col-md">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="Setting goals" class="rounded-5 shadow featureSize">
-                        </div>
-                    </div>
-                    <div class="row justify-content between featuresVP testing3">
-                        <div class="col-md mt-5">This is a explanation on this feature. This is a explanation on this feature. This is a explanation on this feature.</div>
-                        <div class="col-md mt-5">This is a explanation on this feature. This is a explanation on this feature. This is a explanation on this feature.</div>
-                        <div class="col-md mt-5">This is a explanation on this feature. This is a explanation on this feature. This is a explanation on this feature.</div>
-                    </div>
-                </div>
-            </section> -->
-
             <section id="features">
-                <div class="container-md text-center">
-                    <div class="row justify-content-between testing2">
-                        <p class="display-3 mb-4 text">Features</p>
-                        <div class="col-md">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="Logging workouts" class="rounded-5 shadow featureSize">
+                <div class="container-md">
+                    <div class="row justify-content-between text-center fs-4">
+                        <p class="display-3 mb-5 text">Features</p>
+                        <div class="col-md mb-5">
+                            <img src="pictures/pexels-sound-on-3756879.jpg" alt="Logging workouts" class="rounded-5 shadow featureSize">
                             <p class="h3 my-4 text">Log Your Workouts</p>
                             <p class="px-5">
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature.
+                                While you're having your gym session, log the exercises, repetitions, sets, 
+                                and weights you've completed so that you can track your progress.
                             </p>
                         </div>
-                        <div class="col-md">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="Creating workout plans" class="rounded-5 shadow featureSize">
+                        <div class="col-md mb-5">
+                            <img src="pictures/pexels-karolina-grabowska-4467735.jpg" alt="Creating workout plans" class="rounded-5 shadow featureSize">
                             <p class="h3 my-4 text">Create Workout Plans</p>
                             <p class="px-5">
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature.
-                                <!-- talk about the wide variety of options on choosing a exercise from our database -->
+                                Create a customized workout plan using the exercises available in our database 
+                                to be consistent throughout your journey.
                             </p>
                         </div>
-                        <div class="col-md">
-                            <img src="pictures/pexels-ann-poan-5797900.jpg" alt="Setting goals" class="rounded-5 shadow featureSize">
+                        <div class="col-md mb-5">
+                            <img src="pictures/pexels-daniel-reche-1556654.jpg" alt="Setting goals" class="rounded-5 shadow featureSize">
                             <p class="h3 my-4 text">Set Achievable Goals</p>
                             <p class="px-5">
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature.
+                                Set fitness goals that are personalized towards you. You could set a goal to increase strength or reach a specific milestone.
                             </p>
                         </div>
                     </div>
-                    <!-- <div class="row justify-content between testing3">
-                        <div class="col-md mt-5">
-                            <p class="h3 mb-4 text">Log Your Workouts</p>
-                            <p>
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature.
-                            </p>
-                        </div>
-                        <div class="col-md mt-5">
-                            <p class="h3 mb-4 text">Create Workout Plans</p>
-                            <p>
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature.
-                            </p>
-                        </div>
-                        <div class="col-md mt-5">
-                            <p class="h3 mb-4 text">Set Achievable Goals</p>
-                            <p>
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature. 
-                                This is a explanation on this feature.
-                            </p>
-                        </div>
-                    </div> -->
                 </div>
             </section>
+
+            <!-- Contact Us -->
+            <section id="contact">
+                <br><br><br><br><br><br><br><br>
+                <div class="container-md">
+                    <div class="row">
+                        <p class="display-3 mb-4 text-center text">Contact Us</p>
+                        <div class="col-md">
+                            <p class="px-5 fs-4 text-center">
+                                Please email us at contact@myfitness.ca if you have any questions, concerns, or feedback!
+                            </p>
+                        </div>
+                        <div class="col-md">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Name <span class="redText">*</span></label>
+                                <input type="input" class="form-control" id="exampleFormControlInput1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput2" class="form-label">Email address <span class="redText">*</span></label>
+                                <input type="email" class="form-control" id="exampleFormControlInput2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Message <span class="redText">*</span></label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" class="btn btn-dark mb-3 w-100 fw-bold" value="Send"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br>
+            </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="container-fluid py-4 purpleBackground">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <p class="text blackText">Links</p>
+                        <a href="#about" class="text-decoration-none whiteText">About</a><br>
+                        <a href="#features" class="text-decoration-none whiteText">Features</a><br>
+                        <a href="#contact" class="text-decoration-none whiteText">Contact Us</a><br>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="text blackText">Legal</p>
+                        <p class="whiteText">Accessibility</p>
+                        <p class="whiteText">Cookie Policy</p>
+                        <p class="whiteText">Privacy Policy</p>
+                        <p class="whiteText">Terms of Service</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="text blackText">Social</p>
+                        <p class="whiteText">Instagram</p>
+                        <p class="whiteText">X</p>
+                    </div>
+                </div>
+                <div class="row mt-4 text-center">
+                    <div class="col">
+                        <p class="whiteText">© 2024 myfitness. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <!-- jQuery & Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

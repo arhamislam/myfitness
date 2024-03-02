@@ -48,7 +48,7 @@ p {
     font-family: "Concert One", serif;
 }
 
-.navBackground {
+.purpleBackground {
     background-color: #6610f2;
 }
 
@@ -64,7 +64,7 @@ p {
     color: black;
 }
 
-.navLinks {
+.whiteText {
     color: white;
 }
 
@@ -96,44 +96,24 @@ p {
     color: black;
 }
 
-.aboutVP {
+.sectionVP {
     height: 94.5vh;
 }
 
-.featuresHeadingVP {
-    height: 45vh;
-}
-
-.featuresVP {
-    height: 49.5vh;
-}
-
 .featureSize {
-    /* width: 15.6vw;
-    height: 31.7vh; */
     width: 300px;
     height: 300px;
 }
 
-/* .logoMy {
-    padding-right: 10px;
-    font-size: 100px;
-    color: white;
-    -webkit-text-stroke: 5px #6610f2;
+.redText {
+    color: red;
 }
 
-.logoFitness {
-    font-size: 100px;
-    color: #6610f2;
-}
-
-.logoShortStrapline {
-    font-size: 32px;
+.blackText {
     color: black;
-} */
+}
 
 .logo {
-    /* height: 874px; */
     height: 85vh;
 }
 
@@ -181,4 +161,21 @@ p {
 .signUp:active {
     color: black;
     text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+    .logoMy {
+        padding-right: 7.5px;
+        font-size: 75px;
+        -webkit-text-stroke: 3.75px #6610f2;
+    }
+    
+    .logoFitness {
+        font-size: 75px;
+    }
+    
+    .logoShortStrapline {
+        font-size: 24px;
+    }
 }
