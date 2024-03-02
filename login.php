@@ -27,6 +27,18 @@
                 <div class="col-md p-0 testing2">
                     <div class="rounded-5 shadow mx-auto p-4 loginBox">
                         <p class="h2 mb-3 fw-bold">Sign In</p>
+
+                        <form action="" method="POST">
+                            <div class="mb-3 text-start">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password">
+                                <a href="#" class="small text-decoration-none forgotPassword">Forgot password?</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

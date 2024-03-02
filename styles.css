@@ -135,17 +135,14 @@ p {
 
 .forgotPassword:link {
     color: #6C757D;
-    text-decoration: none;
 }
 
 .forgotPassword:visited {
     color: #6C757D;
-    text-decoration: none;
 }
 
 .forgotPassword:active {
     color: black;
-    text-decoration: none;
 }
 
 .signUp:link {

@@ -155,7 +155,7 @@
                 </div>
                 <div class="row mt-4 text-center">
                     <div class="col">
-                        <p class="whiteText">© 2024 myfitness. All Rights Reserved.</p>
+                        <p class="small whiteText">© 2024 myfitness. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
