@@ -1,7 +1,7 @@
 <!--
     Author: Arham Islam
-    File Description: myfitness home page.
     Date Created: February 22, 2024
+    File Description: PHP file that displays the home page.
 -->
 
 <!doctype html>

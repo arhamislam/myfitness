@@ -1,8 +1,21 @@
 <!--
     Author: Arham Islam
-    File Description: myfitness login page.
     Date Created: February 23, 2024
+    File Description: PHP file that displays the login page for myfitness users.
 -->
+
+<?php
+    require("functions.php");
+
+    // If user's login information is correct, then direct user to the myfitness dashboard
+    if(isset($_POST["email"]) && isset($_POST["password"])) {
+        $validLogin = isValidLogin($_POST["email"], $_POST["password"]);
+
+        if($validLogin) {
+            header("Location: template.php");
+        }
+    }
+?>
 
 <!doctype html>
 <html lang="en">
@@ -20,64 +33,52 @@
     <body>
         <div class="container-fluid">
             <div class="row align-items-center text-center logo">
-                <div class="col-md p-0 testing1">
+                <div class="col-md p-0">
                     <span class="text logoMy">my</span><span class="text logoFitness">fitness</span>
                     <p class="text logoShortStrapline">Own Your Fitness Journey</p>
                 </div>
-                <div class="col-md p-0 testing2">
+                <div class="col-md p-0">
                     <div class="rounded-5 shadow mx-auto p-4 loginBox">
-                        <p class="h2 mb-3 fw-bold">Sign In</p>
+                        <p class="h2 mb-4 fw-bold">Sign In</p>
+
+                        <p class="small m-3 redText" id="incorrectLoginInfoAlert">Incorrect email or password. Please try again.</p>
 
                         <form action="" method="POST">
-                            <div class="mb-3 text-start">
+                            <div class="mb-4 text-start">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" id="email" name="email">
                             </div>
-                            <div class="mb-3 text-start">
+                            <div class="mb-4 text-start">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password">
+                                <input type="password" class="form-control" id="password" name="password">
                                 <a href="#" class="small text-decoration-none forgotPassword">Forgot password?</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- <div class="container-fluid">
-            <div class="row align-items-center logo">
-                <div class="col p-0 text-center">
-                    <span class="text logoMy">my</span><span class="text logoFitness">fitness</span>
-                    <p class="text logoShortStrapline">Own Your Fitness Journey</p>
-                </div>
-
-                <div class="col p-0 text-center">
-                    <div class="rounded-5 shadow mx-auto p-4 loginBox">
-                        <h2 class="mb-3 fw-bold">Sign In</h2>
-
-                        <form action="" method="POST">
-                            <div class="mb-3 text-start">
-                                <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                            <div></div>
-                            <div class="mb-3 text-start">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password">
-                                <a href="#" class="forgotPassword"><small>Forgot password?</small></a>
                             </div>
 
                             <input type="submit" class="btn btn-dark mb-3 w-100 fw-bold" value="Sign In"></input>
-                            <p>Don't have an account? <a href="#" class="fw-bold signUp">Sign up</a></p>
+                            <p>Don't have an account? <a href="register.php" class="text-decoration-none fw-bold signUp">Sign up</a></p>
                         </form>
                     </div>
                 </div>
             </div>
-        </div> -->
+            <br><br><br><br>
+            <p class="small text-center">© 2024 myfitness. All Rights Reserved.</p>
+        </div>
 
         <!-- jQuery & Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <script>
+            <?php
+                // If user's login information is incorrect, then display incorrectLoginInfoAlert
+                if(isset($_POST["email"]) && isset($_POST["password"])) {
+                    if(isset($validLogin)) {
+                        if(!$validLogin) {
+            ?>
+
+            document.getElementById("incorrectLoginInfoAlert").style.display = "block";
+
+            <?php } } } ?>
+        </script>
     </body>
 </html>
