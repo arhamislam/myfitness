@@ -22,15 +22,15 @@
 
     /*
     * @desc function to validate login information
-    * @param string $email, string $password
+    * @param string $emailInput, string $passwordInput
     * @return boolean
     */
 
     function isValidLogin($emailInput, $passwordInput) {
         $users = getUsers();
 
-        // Loop through users array and check if the user inputted email matches one of the email's in the database,
-        // then check if hashed password in the database is the same as the inputted password.
+        // Loop through the users array and check if the user inputted email matches one of the email's in the database,
+        // then check if the hashed password in the database is the same as the user inputted password.
         // If both match, then return true. Otherwise, return false.
         foreach($users as $u) {
             if($u["user_email"] == $emailInput) {
@@ -52,25 +52,25 @@
     function createUser($fName, $lName, $email, $password) {
         $users = getUsers();
 
-        // Loop through users array and check if user inputted email matches one of the email's in the database,
-        // if it does, then return false
+        // Loop through the users array and check if the user inputted email matches one of the email's in the database.
+        // If it does, then return false.
         foreach($users as $u) {
             if($u["user_email"] == $email) {
                 return false;
             }
         }
 
-        // Making sure new user does not make an account with null
+        // Making sure a new user does not create an account with null
         if($fName == "null" || $lName == "null" || $email == "null" || $password == "null") {
             return false;
         }
 
-        // Making sure new user does not make an account with null
+        // Making sure a new user does not create an account with null
         if($fName == "NULL" || $lName == "NULL" || $email == "NULL" || $password == "NULL") {
             return false;
         }
 
-        // Making sure new user does not make an account with empty input fields
+        // Making sure a new user does not create an account with empty input fields
         if($fName == "" || $lName == "" || $email == "" || $password == "") {
             return false;
         }

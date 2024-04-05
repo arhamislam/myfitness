@@ -149,7 +149,11 @@ p {
     color: black;
 }
 
-#incorrectLoginInfoAlert {
+#invalidLoginAlert {
+    display: none;
+}
+
+#invalidSignUpAlert {
     display: none;
 }
 

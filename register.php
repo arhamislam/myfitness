@@ -7,16 +7,17 @@
 <?php
     require("functions.php");
 
-    //
+    session_start();
+
+    // If the user inputted first name, last name, email, and password are not null...
     if(isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+        // Create a user in the database
         $newUser = createUser($_POST["fName"], $_POST["lName"], $_POST["email"], $_POST["password"]);
 
+        // If $newUser is true, then assign a session variable, and direct the user to the login page
         if($newUser) {
-            echo "SUCCESS";
-        }
-
-        else {
-            echo "FAILURE";
+            $_SESSION["email"] = $_POST["email"];
+            header("Location: dashboard.php");
         }
     }
 ?>
@@ -44,6 +45,8 @@
                 <div class="col-md p-0">
                     <div class="rounded-5 shadow mx-auto p-4 loginBox">
                         <p class="h2 mb-4 fw-bold">Sign Up</p>
+
+                        <p class="small redText" id="invalidSignUpAlert">All fields must be filled up, then try again.</p>
 
                         <form action="" method="POST">
                             <div class="mb-3 text-start">
@@ -80,5 +83,14 @@
         <!-- jQuery & Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <script>
+            <?php
+                // If $newUser is false, then show the invalid sign up alert
+                if(!$newUser) {
+            ?>
+            document.getElementById("invalidSignUpAlert").style.display = "block";
+            <?php } ?>
+        </script>
     </body>
 </html>

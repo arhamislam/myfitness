@@ -1,18 +1,23 @@
 <!--
     Author: Arham Islam
     Date Created: February 23, 2024
-    File Description: PHP file that displays the login page for myfitness users.
+    File Description: PHP file that displays the login page.
 -->
 
 <?php
     require("functions.php");
 
-    // If user's login information is correct, then direct user to the myfitness dashboard
+    session_start();
+
+    // If the user inputted email and password are not null...
     if(isset($_POST["email"]) && isset($_POST["password"])) {
+        // Check if the credentials are in the database
         $validLogin = isValidLogin($_POST["email"], $_POST["password"]);
 
+        // If $validLogin is true, then assign a session variable, and direct the user to the dashboard page
         if($validLogin) {
-            header("Location: template.php");
+            $_SESSION["email"] = $_POST["email"];
+            header("Location: dashboard.php");
         }
     }
 ?>
@@ -41,7 +46,7 @@
                     <div class="rounded-5 shadow mx-auto p-4 loginBox">
                         <p class="h2 mb-4 fw-bold">Sign In</p>
 
-                        <p class="small m-3 redText" id="incorrectLoginInfoAlert">Incorrect email or password. Please try again.</p>
+                        <p class="small m-3 redText" id="invalidLoginAlert">Incorrect email or password. Please try again.</p>
 
                         <form action="" method="POST">
                             <div class="mb-4 text-start">
@@ -70,15 +75,11 @@
 
         <script>
             <?php
-                // If user's login information is incorrect, then display incorrectLoginInfoAlert
-                if(isset($_POST["email"]) && isset($_POST["password"])) {
-                    if(isset($validLogin)) {
-                        if(!$validLogin) {
+                // if $validLogin is false, then show the incorrect login info alert
+                if(!$validLogin) {
             ?>
-
-            document.getElementById("incorrectLoginInfoAlert").style.display = "block";
-
-            <?php } } } ?>
+            document.getElementById("invalidLoginAlert").style.display = "block";
+            <?php } ?>
         </script>
     </body>
 </html>
