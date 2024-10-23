@@ -87,4 +87,34 @@
 
         return true;
     }
+
+    /*
+    * @desc function to find user's first name with email
+    * @param string $email
+    * @return string
+    */
+
+    function getUserFirstNameWithEmail($email) {
+        global $pdo;
+        $query = $pdo -> prepare("SELECT * FROM users WHERE user_email = :user_email");
+        $query -> bindparam(":user_email", $email);
+        $query -> execute();
+        $userFirstName = $query -> fetchAll(PDO::FETCH_ASSOC);
+        return $userFirstName[0]["user_fname"];
+    }
+
+    /*
+    * @desc function to find user's last name with email
+    * @param string $email
+    * @return string
+    */
+
+    function getUserLastNameWithEmail($email) {
+        global $pdo;
+        $query = $pdo -> prepare("SELECT * FROM users WHERE user_email = :user_email");
+        $query -> bindparam(":user_email", $email);
+        $query -> execute();
+        $userLastName = $query -> fetchAll(PDO::FETCH_ASSOC);
+        return $userLastName[0]["user_lname"];
+    }
 ?>

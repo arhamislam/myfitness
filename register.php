@@ -16,8 +16,7 @@
 
         // If $newUser is true, then assign a session variable, and direct the user to the login page
         if($newUser) {
-            $_SESSION["email"] = $_POST["email"];
-            header("Location: dashboard.php");
+            header("Location: login.php");
         }
     }
 ?>

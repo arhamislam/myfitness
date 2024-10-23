@@ -17,7 +17,7 @@
         // If $validLogin is true, then assign a session variable, and direct the user to the dashboard page
         if($validLogin) {
             $_SESSION["email"] = $_POST["email"];
-            header("Location: dashboard.php");
+            header("Location: template.php");
         }
     }
 ?>

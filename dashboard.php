@@ -5,31 +5,39 @@
 -->
 
 <?php
-    require("functions.php");
+    // Making sure only users who are logged in can access the website
+    if(!isset($_SESSION["email"])) {
+        header("Location: login.php");
+    }
 
-    session_start();
+    $_SESSION["fName"] = getUserFirstNameWithEmail($_SESSION["email"]);
+    $_SESSION["lName"] = getUserLastNameWithEmail($_SESSION["email"]);
 ?>
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
+<head>
+    <title>myfitness | Dashboard</title>
+</head>
+<body>
+    <div>
+        <br>
+        <span class="display-4 m-5 text"><?php echo "Welcome back, " . $_SESSION["fName"]; ?></span>
+        <!-- make the large buttons I wanted to do like the ones in MC1 -->
 
-        <!-- Bootstrap -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-dark" href="#" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION["fName"] . " " . $_SESSION["lName"] ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="?page=profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="?page=settings">Settings</a></li>
+                            <li><a class="dropdown-item" href="logout.php">Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="pictures/favicon.ico">
-        <title>myfitness | Dashboard</title>
-    </head>
-    <body>
-        <?php
-            echo $_SESSION["email"];
-        ?>
-
-        <!-- jQuery & Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
-</html>
+    <a href="?page=logsheet">Log Sheet</a>
+</body>
