@@ -13,7 +13,7 @@
         <span class="display-4 m-5 text">Log Sheet</span>
     </div>
     <div>
-        <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" onclick="addExerciseModal()">Add Exercise</button>
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" onclick="addExerciseModal()">Add Exercise</button>
 
         <div class="modal fade" id="addExerciseModal" tabindex="-1" aria-labelledby="addExerciseModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -32,11 +32,11 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     
     <div class="col-md-2 ms-5 mb-4 p-0 testing2">
         <label for="exerciseDateInput" class="form-label">Date</label>
-        <input type="date" class="form-control" id="exerciseDateInput">
+        <input type="date" class="form-control" id="exerciseDateInput" onkeydown="return false;">
     </div>
 
     <script>
